@@ -33,17 +33,34 @@ function generatePassword() {
     let specialCharacters = window.confirm("Do you want to add special characters?")
     characters.push(specialCharacters)
     if (!characters.includes(true)) {
-      window.alert("You must select at least one character option.")
+      window.alert("You must select at least one character option.");
+      return;
+    }
+    console.log(password)
+
+    password = makePassword(length, lowerCase, upperCase, numeric, specialCharacters);
+    console.log(password)
+
+    function makePassword(length, lowerCase, upperCase, numeric, specialCharacters) {
+      let passwordArray = []
+      if (lowerCase) {
+        passwordArray = passwordArray.concat(lower)
+      } if (upperCase) {
+        passwordArray = passwordArray.concat(upperCaseAlp)
+      } if (numeric) {
+        passwordArray = passwordArray.concat(integers)
+      } if (specialCharacters) {
+        passwordArray = passwordArray.concat(specialSplit)
+      };
+      const passwordCharacters = [];
+      for (let i = 0; i < length; i++) {
+        const character = passwordArray[Math.floor(Math.random() * passwordArray.length)]
+        passwordCharacters.push(character)
+      }
+      return passwordCharacters.join("");
     }
 
-    let password = []
-    // while (password.length < length) {
-    if (characters[0] === true) {
-      let smallLetters = Math.floor(Math.random() * lower.length);
-      password.push(lower[smallLetters]);
-      console.log(password)
-
-    }
+    console.log(password)
 
   }
 }
