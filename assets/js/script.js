@@ -81,7 +81,7 @@ function generatePassword() {
       // returns a string from passwordCharacters array 
       return passwordCharacters.join("");
     }
-
+    console.log(password)
   }
 }
 
