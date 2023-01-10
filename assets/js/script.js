@@ -20,7 +20,8 @@ function generatePassword() {
   } else {
     length = Number(length);
     if (length < 8 || length > 128) {
-      alert("Please select a length between 8 and 128 characters.")
+      alert("Please select a length between 8 and 128 characters.");
+      return;
     }
     let characters = []
     let lowerCase = window.confirm("Do you want to add lowercase characters?")
