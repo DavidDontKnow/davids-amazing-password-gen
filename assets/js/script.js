@@ -82,6 +82,8 @@ function generatePassword() {
       return passwordCharacters.join("");
     }
     console.log(password)
+    // returns the password variable to be used in writePassword()
+    return password
   }
 }
 
